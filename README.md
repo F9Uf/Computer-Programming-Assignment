@@ -13,8 +13,8 @@ C Language
 
 Java Language
 ======
-* [Assignment 6](java assign/assign6)
-* [Assignment 7](java assign/assign7)
-* [Assignment 8](java assign/assign8)
-* [Assignment 9](java assign/assign9)
-* [Assignment 10](java assign/assign10)
+* [Assignment 6](/java assign/assign6)
+* [Assignment 7](/java assign/assign7)
+* [Assignment 8](/java assign/assign8)
+* [Assignment 9](/java assign/assign9)
+* [Assignment 10](/java assign/assign10)
