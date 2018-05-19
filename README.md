@@ -1,6 +1,7 @@
 # Computer-Programming-Assignment
 
-    This is Assignment in CPE111 _(Programming with Data Structure)_ subject when i was studied first year on **CPE@KMUTT**
+This is Assignment in CPE111 _( Programming with Data Structure )_ subject when i was studied first year on **CPE@KMUTT**
+
 
 C Language
 =========
@@ -13,8 +14,8 @@ C Language
 
 Java Language
 ======
-* [Assignment 6](/java assign/assign6)
-* [Assignment 7](/java assign/assign7)
-* [Assignment 8](/java assign/assign8)
-* [Assignment 9](/java assign/assign9)
-* [Assignment 10](/java assign/assign10)
+* [Assignment 6](java%20assign/assign6)
+* [Assignment 7](/java%20assign/assign7)
+* [Assignment 8](/java%20assign/assign8)
+* [Assignment 9](/java%20assign/assign9)
+* [Assignment 10](/java%20assign/assign10)
