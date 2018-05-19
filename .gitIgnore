@@ -1,0 +1,19 @@
+*.docx
+*.pdf
+*.o
+*.exe
+*.odt
+*.png
+*.jpg
+*.gif
+.classpath
+.project
+
+
+final exam/
+exam/
+.metadata/
+.recommenders/
+2559/
+.settings/
+bin/
