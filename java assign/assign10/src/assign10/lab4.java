@@ -47,11 +47,10 @@ public class lab4 {
 		//Kruskal process
 		
 		ArrayList<KruskalEdge> MST = new ArrayList<KruskalEdge>();
-		boolean loop[][] = new boolean[row][col];
+		boolean loop[][] = new boolean[row][col]; //array for warshall
 		KruskalEdge e;
 		while((e = edge.poll()) != null) {
 
-			//kruskal
 			if(loop[e.from][e.to] == false) {
 				System.out.println("Select edge : "+e.toString());
 				loop[e.from][e.to] = true;
@@ -60,7 +59,7 @@ public class lab4 {
 				MST.add(e);			
 			}
 			else {
-				System.out.println("DElete edge : "+e.toString());
+				System.out.println("Delete edge : "+e.toString());
 			}
 			
 		}
@@ -75,7 +74,7 @@ public class lab4 {
 		
 		
 	}
-	
+	// warshall's algorithm for check the edge that is selected make cycle ?
 	public static void warshall(boolean[][] loop,int row,int col) {
 		for(int m=0;m<row;m++) {
 			for(int i=0;i<col;i++) {
