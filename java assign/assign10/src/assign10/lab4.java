@@ -1,17 +1,13 @@
 package assign10;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-//import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class lab4 {
 
 	
 	public static void main(String[] args) {
-		HashMap<Integer, Integer> root = new HashMap<Integer,Integer>();
-		HashMap<Integer, Integer> rank = new HashMap<Integer,Integer>();
-		
+				
 		int graph[][] = new int [][] {
 			{0,2,4,1,0,0,0},
 			{2,0,0,3,10,0,0},
@@ -43,10 +39,6 @@ public class lab4 {
 				if(graph[i][j]!=0) {
 					KruskalEdge e = new KruskalEdge(i,j,graph[i][j]);
 					edge.add(e);
-					root.put(i,i);
-					root.put(j, j);
-					rank.put(i, 0);
-					rank.put(j, 0);
 				}
 				
 			}
@@ -58,13 +50,19 @@ public class lab4 {
 		boolean loop[][] = new boolean[row][col];
 		KruskalEdge e;
 		while((e = edge.poll()) != null) {
-			if(Find(root,e.from) != Find(root,e.to)) {
-				System.out.println("Select edge ="+e.toString());
-				union(root,rank, Find(root, e.from), Find(root,e.to));
-				MST.add(e);
-			}else {
-				System.out.println("Delete edge = "+e.toString());
+
+			//kruskal
+			if(loop[e.from][e.to] == false) {
+				System.out.println("Select edge : "+e.toString());
+				loop[e.from][e.to] = true;
+				loop[e.to][e.from] = true;
+				warshall(loop,row,col);
+				MST.add(e);			
 			}
+			else {
+				System.out.println("DElete edge : "+e.toString());
+			}
+			
 		}
 		//show all Edge are selected
 		System.out.println("\n------ Success ------\n");
@@ -79,36 +77,14 @@ public class lab4 {
 	}
 	
 	public static void warshall(boolean[][] loop,int row,int col) {
-		for(int i=0;i<row;i++) {
-			for(int j=0;j<col;j++) {
-				for(int m=0;m<row;m++) {
+		for(int m=0;m<row;m++) {
+			for(int i=0;i<col;i++) {
+				for(int j=0;j<row;j++) {
 					loop[i][j] = loop[i][j] || (loop[i][m] && loop[m][j]);
 				}
 			}
 		}
 	}
-	
-	public static int Find(HashMap<Integer,Integer> root,int x) {
-		if(root.get(x) == x)
-			return x;
-		else
-			return Find(root,root.get(x));
-		
-	}
-	
-	public static void union(HashMap<Integer,Integer> root,HashMap<Integer,Integer> rank,int x,int y) {
-		if(rank.get(x) > rank.get(y)) {
-			root.put(y, x);
-		}else if(root.get(x) < rank.get(y)) {
-			root.put(x, y);
-		}else {
-			root.put(x, y);
-			rank.put(y, rank.get(y)+1);
-		}
-	}
-	
-
-	
 
 }
 
